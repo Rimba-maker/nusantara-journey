@@ -6,7 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nusantarajourney.id',
+  site: 'https://rimba-maker.github.io',
+  base: '/nusantara-journey/',
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()]
