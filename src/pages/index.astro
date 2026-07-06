@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/islands/Hero';
+import TripCategories from '../components/islands/TripCategories';
+import FeaturedPackages from '../components/islands/FeaturedPackages';
+import Destinations from '../components/islands/Destinations';
+import WhyChooseUs from '../components/islands/WhyChooseUs';
+import HowItWorks from '../components/HowItWorks.astro';
+import HoneymoonSpecial from '../components/islands/HoneymoonSpecial';
+import MiceCorporate from '../components/MiceCorporate.astro';
+import Testimonial from '../components/islands/Testimonial';
+import TravelTipsBlog from '../components/islands/TravelTipsBlog';
+import PartnerLicense from '../components/PartnerLicense.astro';
+import BookingCta from '../components/islands/BookingCta';
+---
+
+<Layout>
+	<Hero client:load />
+	<TripCategories client:visible />
+	<FeaturedPackages client:visible />
+	<Destinations client:visible />
+	<WhyChooseUs client:visible />
+	<HowItWorks />
+	<HoneymoonSpecial client:visible />
+	<MiceCorporate />
+	<Testimonial client:visible />
+	<TravelTipsBlog client:visible />
+	<PartnerLicense />
+	<BookingCta client:idle />
+</Layout>

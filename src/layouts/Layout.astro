@@ -1,0 +1,64 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Nusantara Journey — Travel Agent & Tour Operator Indonesia Terpercaya',
+	description = 'Travel agent & tour operator terpercaya. Paket wisata domestik & internasional, honeymoon, MICE. Custom itinerary, visa assistance, 24/7 support. Terdaftar ASITA.'
+} = Astro.props;
+
+const ogImage = '/og-image.jpg';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://nusantarajourney.id');
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'TravelAgency',
+	name: 'Nusantara Journey',
+	description,
+	url: canonicalURL.toString(),
+	areaServed: 'ID'
+};
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta
+			name="keywords"
+			content="travel agent indonesia, paket tour, tour operator, honeymoon maldives, wisata jepang, labuan bajo tour, open trip, corporate travel, paket wisata murah"
+		/>
+		<link rel="canonical" href={canonicalURL} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+	</head>
+	<body class="bg-canvas text-ink font-sans antialiased">
+		<Navbar />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

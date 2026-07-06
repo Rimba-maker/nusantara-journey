@@ -1,0 +1,50 @@
+---
+const columns = [
+	{
+		heading: 'Kontak',
+		items: [
+			'Jl. Diponegoro No. 45, Padang, Sumatera Barat',
+			'Senin-Sabtu 08:00-20:00, Minggu 10:00-17:00',
+			'Hotline 24/7 (untuk traveler dalam perjalanan)'
+		]
+	},
+	{
+		heading: 'Sosial Media',
+		items: ['Instagram — @nusantarajourney.id', 'TikTok — destination reels', 'YouTube — travel vlog']
+	},
+	{
+		heading: 'Pembayaran',
+		items: ['Transfer bank', 'QRIS', 'Kartu kredit', 'Cicilan 0% via BCA/Mandiri']
+	}
+];
+---
+
+<footer class="border-t border-hairline bg-canvas">
+	<div class="mx-auto max-w-[1280px] px-6 py-16">
+		<p class="mb-12 font-serif text-2xl text-ink">
+			"Bukan sekadar liburan — kami bantu ciptakan kenangan."
+		</p>
+
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+			{
+				columns.map((col) => (
+					<div>
+						<h3 class="mb-3 text-base font-semibold text-ink">{col.heading}</h3>
+						<ul class="space-y-2">
+							{col.items.map((item) => (
+								<li class="text-sm text-muted">{item}</li>
+							))}
+						</ul>
+					</div>
+				))
+			}
+		</div>
+	</div>
+
+	<div class="border-t border-hairline-soft">
+		<div class="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-muted md:flex-row">
+			<p>© 2026 Nusantara Journey. Terdaftar ASITA & ASTINDO.</p>
+			<p>Bahasa Indonesia · English</p>
+		</div>
+	</div>
+</footer>

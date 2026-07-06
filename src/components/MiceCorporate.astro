@@ -1,0 +1,65 @@
+---
+import { Trophy, Users, ChartBar, Plane } from 'lucide-react';
+
+const services = [
+	{
+		icon: Trophy,
+		title: 'Incentive Tour',
+		body: 'Hadiah perjalanan untuk top performer. Kami urus semua — flight, hotel, activities, gala dinner.'
+	},
+	{
+		icon: Users,
+		title: 'Team Building Trip',
+		body: 'Domestik & internasional. Aktivitas outdoor, rafting, cooking class, budaya lokal.'
+	},
+	{
+		icon: ChartBar,
+		title: 'Conference & Seminar',
+		body: 'Venue selection, logistics, F&B, technical setup untuk event perusahaan.'
+	},
+	{
+		icon: Plane,
+		title: 'Company Annual Trip',
+		body: 'Perencanaan full company outing 20-500 orang. Dedicated event manager.'
+	}
+];
+
+const stats = ['50+ Company Partner', '10.000+ Corporate Traveler', '20 Kota Coverage'];
+---
+
+<section id="mice" class="bg-surface-soft py-16">
+	<div class="mx-auto max-w-[1280px] px-6">
+		<h2 class="text-3xl font-bold text-ink md:text-4xl">Corporate Travel & MICE</h2>
+		<p class="mt-2 text-lg text-muted">
+			Company trip, team building, incentive tour, dan event internasional — kami handle dari awal sampai akhir.
+		</p>
+
+		<div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+			{
+				services.map((s) => (
+					<div class="rounded-md bg-white p-6 shadow-card">
+						<s.icon className="h-8 w-8 text-primary-teal" strokeWidth={1.75} />
+						<h3 class="mt-3 text-lg font-semibold text-ink">{s.title}</h3>
+						<p class="mt-1 text-sm text-body">{s.body}</p>
+					</div>
+				))
+			}
+		</div>
+
+		<div class="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-hairline pt-8">
+			<div class="flex flex-wrap gap-8">
+				{
+					stats.map((stat) => (
+						<span class="text-sm font-semibold text-primary-teal">{stat}</span>
+					))
+				}
+			</div>
+			<a
+				href="#booking"
+				class="rounded-sm bg-cta-gold px-6 py-3 text-base font-medium text-white transition-colors hover:bg-cta-gold-active"
+			>
+				Konsultasi MICE
+			</a>
+		</div>
+	</div>
+</section>
