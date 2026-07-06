@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# internal project/AI notes (not for public repo)
+CLAUDE.md
+AGENTS.md
+*-PRD.md
